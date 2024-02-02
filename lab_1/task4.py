@@ -2,6 +2,7 @@ class class_schedule:
   def __init__(self):
     self.classes = []
 
+  # Read the input file and store the classes in a list
   def read_classes_input(self, filename):
     with open(filename, "r") as f:
       course_count = int(f.readline().strip())
@@ -26,6 +27,7 @@ class class_schedule:
           "average_grade": average_grade
         })
 
+  # Return the formatted classes
   def return_formatted_classes(self):
     output = ""
     for course in self.classes:
