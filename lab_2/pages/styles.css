@@ -1,20 +1,35 @@
-html {
-  overflow: scroll;
-  overflow-x: hidden;
-}
-
 body {
   color: #000000;
+  font-family: 'Roboto', sans-serif;
   background-color: #4F6F52;
-  background-image: url('../public/background.svg');
+  background-image: url('../public/background.png');
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  background-attachment: fixed;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  max-width: 50%;
+  max-width: 60%;
+}
+
+p, li {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+
+hr {
+  border: 1px solid black;
+}
+
+.contentContainer {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  max-width: 70%;
+  backdrop-filter: blur(10px);
 }
 
 .navbar ul {
@@ -51,6 +66,16 @@ body {
   height: 80px;
   display: block;
   margin-right: 30px;
+}
+
+#otterwave {
+  width: 800px;
+  height: 400px;
+  display: block;
+  margin-right: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 ::-webkit-scrollbar {
