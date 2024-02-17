@@ -1,0 +1,75 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.buttonNum {
+  background: #5B9BD5;
+  width: 80px;
+  height: 60px;
+  border-radius: 10px;
+  outline: #7E7576 solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonArithmetic {
+  background: #70AD47;
+  width: 80px;
+  height: 60px;
+  border-radius: 10px;
+  outline: #7E7576 solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonClear {
+  background: #ED7D31;
+  width: 80px;
+  height: 60px;
+  border-radius: 10px;
+  outline: #7E7576 solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#calculatorContainer {
+  background: #D0CECE;
+  border-radius: 10px;
+  outline: #000000 solid 3px;
+}
+
+#calculator {
+  padding: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#displayPanel {
+  background: #E7E6E6;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  outline: #000000 solid 2px;
+  height: 60px;
+  text-align: right;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
