@@ -13,7 +13,6 @@ td {
   height: 50px;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
   padding: 10px;
 }
 
@@ -26,6 +25,7 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .buttonArithmetic {
@@ -37,6 +37,7 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .buttonClear {
@@ -48,6 +49,7 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 #calculatorContainer {
