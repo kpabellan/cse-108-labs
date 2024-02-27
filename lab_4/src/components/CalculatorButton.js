@@ -20,6 +20,14 @@ function CalculatorButton({ label, onClick, isOperation, isClicked }) {
         backgroundColor: '#ff771b',
       },
     };
+  } else if (label === '=') {
+    btnClass = {
+      ...btnClass,
+      backgroundColor: '#70AD47',
+      ':hover': {
+        backgroundColor: '#5f933c',
+      },
+    };
   }
 
   return (

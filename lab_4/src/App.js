@@ -119,7 +119,7 @@ function App() {
                     handleOperationClick(key);
                   }
                 }}
-                isOperation={['+', '-', 'x', '/', '=', 'C'].includes(key)}
+                isOperation={['+', '-', 'x', '/'].includes(key)}
                 isClicked={isOperationClicked && operation === key}
               />
             </Grid>
