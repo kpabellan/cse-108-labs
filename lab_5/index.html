@@ -7,17 +7,41 @@
   <title>Grades</title>
 </head>
 <body>
-  <h1>Grades</h1>
-  <button id="studentGrade">Ask for student grade</button>
-  <button id="allGrades">See all grades</button>
-  <button id="createGrade">Create new student grade</button>
-  <button id="editGrade">Edit student grade</button>
-  <button id="deleteGrade">Delete student grade</button>
-
-  <div id="gradeContainer">
-    <table id="grades"></table>
+  <div id="titleContainer">
+    <h1>Grades</h1>
   </div>
-  
+  <div id="contentContainer">
+    <div id="options">
+      <p>See All Grades</p>
+      <button id="allGrades">See All Grades</button>
+      <hr />
+
+      <p>Ask For Student grade</p>
+      <input type="text" id="studentGradeName" placeholder="Name" style="margin-bottom: 10px"/>
+      <button id="studentGrade">Ask For Student grade</button>
+      <hr />
+
+      <p>Create New Student Grade</p>
+      <input type="text" id="createGradeName" placeholder="Name" style="margin-bottom: 10px"/>
+      <input type="text" id="createGradeGrade" placeholder="Grade" style="margin-bottom: 10px"/>
+      <button id="createGrade">Create New Student Grade</button>
+      <hr />
+
+      <p>Edit Student Grade</p>
+      <input type="text" id="editGradeName" placeholder="Name" style="margin-bottom: 10px"/>
+      <input type="text" id="editGradeGrade" placeholder="Grade" style="margin-bottom: 10px"/>
+      <button id="editGrade">Edit Student Grade</button>
+      <hr />
+
+      <p>Delete Student Grade</p>
+      <input type="text" id="deleteGradeName" placeholder="Name" style="margin-bottom: 10px"/>
+      <button id="deleteGrade">Delete Student Grade</button>
+    </div>
+
+    <div id="gradeContainer">
+      <table id="grades"></table>
+    </div>
+  </div>
   <script src="scripts.js"></script>
 </body>
 </html>

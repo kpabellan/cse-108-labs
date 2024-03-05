@@ -16,13 +16,25 @@ async function reqGrade(reqType, reqBody, studentName) {
 
   const response = await fetch(`https://amhep.pythonanywhere.com/grades${studentName}`, options);
 
+  if (response.status != 200) {
+    alert("Failed request: try again");
+    return;
+  }
+
   const gradesJSON = await response.json();
 
   let table = "<tr><th>Student Name</th><th>Grade</th></tr>";
 
   for (let key in gradesJSON) {
     if (gradesJSON.hasOwnProperty(key)) {
-      table += "<tr><td>" + `${key}` + "</td><td>" + `${gradesJSON[key]}` + "</td></tr>";
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = key;
+      const cleanKey = tempDiv.textContent || tempDiv.innerText || "";
+
+      tempDiv.innerHTML = gradesJSON[key];
+      const cleanValue = tempDiv.textContent || tempDiv.innerText || "";
+
+      table += "<tr><td>" + cleanKey + "</td><td>" + cleanValue + "</td></tr>";
     }
   }
 
@@ -36,23 +48,62 @@ document.getElementById("allGrades").addEventListener("click", function() {
 
 // See student grade
 document.getElementById("studentGrade").addEventListener("click", function() {
-  reqGrade("GET", null, "Han Solo");
+  const name = document.getElementById("studentGradeName").value;
+
+  if (name === "") {
+    alert("Please enter a student name");
+    return;
+  }
+
+  document.getElementById("studentGradeName").value = "";
+
+  reqGrade("GET", null, name);
 });
 
 // Create grade
 document.getElementById("createGrade").addEventListener("click", function() {
-  let grade = {"name": "Han Solo", "grade": 50};
-  reqGrade("POST", grade, "");
+  const name = document.getElementById("createGradeName").value;
+  const grade = document.getElementById("createGradeGrade").value;
+
+  if (name === "" || grade === "") {
+    alert("Please enter a student name and grade");
+    return;
+  }
+
+  document.getElementById("createGradeName").value = "";
+  document.getElementById("createGradeGrade").value = "";
+
+  const gradeBody = {"name": name, "grade": grade};
+  reqGrade("POST", gradeBody, "");
 });
 
 // Edit grade
 document.getElementById("editGrade").addEventListener("click", function() {
-  let name = "Han Solo";
-  let grade = {"grade": 100};
-  reqGrade("PUT", grade, name);
+  const name = document.getElementById("editGradeName").value;
+  const grade = document.getElementById("editGradeGrade").value;
+
+  if (name === "" || grade === "") {
+    alert("Please enter a student name and grade");
+    return;
+  }
+
+  document.getElementById("editGradeName").value = "";
+  document.getElementById("editGradeGrade").value = "";
+
+  const gradeBody = {"grade": grade};
+  reqGrade("PUT", gradeBody, name);
 });
 
 // Delete grade
 document.getElementById("deleteGrade").addEventListener("click", function() {
-  reqGrade("DELETE", null, "Han Solo");
+  const name = document.getElementById("deleteGradeName").value;
+
+  if (name === "") {
+    alert("Please enter a student name");
+    return;
+  }
+
+  document.getElementById("deleteGradeName").value = "";
+
+  reqGrade("DELETE", null, name);
 });
